@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "title": "Blockchain Basics for Everyone",
+      "date": "2025-01-10",
+      "category": "blockchain",
+      "excerpt": "An intuitive explanation of blockchain technology of beginners",
+      "tags": [
+        "bitcoin",
+        "blockchain",
+        "ethereum"
+      ],
+      "url": "./posts/blockchain-for-beginners.html",
+      "readTime": "7 min read",
+      "author": "Prashish Phunyal"
+    }
+  ]
+}

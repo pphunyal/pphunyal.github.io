@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Basics for Everyone | Prashish Phunyal</title>
+    <meta name="description" content="">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../src/assets/prashish.png">
+
+    <!-- Theme Script -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/" class="site-title-link">Prashish</a>
+                </h1>
+                <nav class="social-nav">
+                    <a href="https://bsky.app/profile/prashish.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">Bluesky</span>
+                        Bluesky
+                    </a>
+                    <a href="https://github.com/pphunyal" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">GitHub</span>
+                        GitHub
+                    </a>
+                    <a href="https://instagram.com/quantumbrokemyrsa" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">Instagram</span>
+                        Instagram
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <article class="post-article">
+                <div class="post-header">
+                    <div class="post-meta">
+                        <span class="post-category-tag">blockchain</span>
+                        <time class="post-date" datetime="2025-01-10">January 10, 2025</time>
+                    </div>
+                    <h1 class="post-title">Blockchain Basics for Everyone</h1>
+                    <div class="post-info">
+                        <span class="read-time">5 min read</span>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p>In traditional finance a single entity like a bank is responsible for keeping records of your money and expects you to trust them to work diligently. With blockchains every node keeps a copy of the ledger which eliminates the need to put your faith in a central authoritative body.</p>
+<p>&quot;Okay, sounds great. But is it really that revolutionary?&quot;</p>
+<p>That is one of the questions I have tried to answer here among many more.</p>
+<p>There&#39;s an ever growing curiosity among the general public regarding blockchains. Sadly this curiosity seldom gets translated into real understanding of blockchains. Mostly because blockchains are at the intersection of multiple disciplines like cryptography, mathematics, economics, and computer science. An explanation about blockchains is very likely to make the general audience feel overwhelmed. However, this should not be the case at all.</p>
+<p>One does not necessarily need to get into the details of SHA-256 or the mathematics behind elliptic curve cryptography, nor does one need to come from a computer science, mathematics or economics background to grasp the fundamentals of blockchains and truly understand their potential.</p>
+<p>This blog is aimed for the general audience because I believe that understanding of blockchains among the general public could significantly increase user adoption and be a catalyst for policy formations. Another reason I want people to understand blockchains is because it would somehow justify why enthusiasts like me speak so passionately about this space. This blog would also be a good starting point for developers as the primary aim of this blog is to provide a solid foundation on blockchains.</p>
+<h2>Introduction</h2>
+<p>A blockchain is a platform where you can safely exchange value (anything valuable: money, assets or simply data) without a central authority or a middleman. It stores transactional data across different computers (nodes) working independently in such a way that everyone agrees on the legitimacy of the transactions. One implication of this is that you can send any amount of money to and from anywhere in the world directly to anyone.</p>
+<p>Imagine you are sending some money to Bob. You initiate the transaction and it gets relayed through your bank. Bob will receive the money once and if your bank approves the transaction. Here the bank acts as an intermediary. It decides who you can send money to, where you can send your money and how much money you can send . It also has the authority to reverse your transactions or freeze your account.</p>
+<p>Another deep flaw in traditional finance is that the financial institutions can often make risky bets with customer funds resulting in massive customer losses, bank collapses and may even result in a greater economic turmoil. The root cause being lack of transparency.</p>
+<p>With blockchains you are making a fundamental shift of trust from centralised financial institutions to a decentralised and transparent platform that is governed by the rules of mathematics and computer code.</p>
+<h3>A somewhat technical definition</h3>
+<p>A blockchain at its core is a cryptographically secure, peer-to-peer, distributed, immutable append-only transactional ledger updateable only via consensus. Too many jargons for something aimed at the general reader. However, understanding these terminologies is essential to understanding blockchains themselves. I&#39;ve tried to explain what each terminology means in the context of blockchain.</p>
+<p><strong>Peer-to-peer</strong>: A network where every participant has equal status and you directly interact with each other. Everyone is a &#39;peer&#39;. There are no servers. Every participant works as both a server and as a client.</p>
+<p><strong>Immutable</strong>: Extremely hard to change.</p>
+<p><strong>Distributed</strong>: The nodes work in a coordinated fashion to achieve a common outcome appearing as a single logical platform to the end user.</p>
+<p><strong>Append-only</strong>: New transactions can be added to the blockchain but existing transactions cannot be changed or removed.</p>
+<p><strong>Consensus</strong>: A set of rules that nodes follow to come to an agreement about the state of the blockchain. It allows the nodes to agree about the one &#39;true&#39; ledger. It also helps determine who gets to add new transactions in the blockchain.</p>
+<p><strong>Cryptographically secure</strong>: Protected using strong cryptography (techniques based on mathematics mostly used for secure communication). Essentially, it means that blockchains are so secure that even someone with vast computational power cannot realistically break them.</p>
+<p>I strongly recommend going through the definition again before continuing with the rest of the blog.</p>
+<h3>Why is it called &#39;blockchain&#39;?</h3>
+<p>We now know that blockchain stores transactions. Every node has a copy of the blockchain which updates regularly with the latest transactions. This record is essential for determining how much money each person owns. Here comes the catch. The transactions are not recorded individually on the blockchain. Instead, the latest transactions are grouped together into a block and appended on the existing chain of blocks. Hence, blockchain.</p>
+<p>Storing the transactions as a chain of blocks is a security feature that prevents anyone from modifying the transactions. We&#39;ll briefly go through it in later sections.</p>
+<h2>Components of a blockchain</h2>
+<p>Before we get into how blockchain work. Let&#39;s quickly go through the simplified version of the components that make a blockchain possible.</p>
+<p><strong>A peer-to-peer network</strong>: A P2P network is essential for connecting the participants and propagating transactions and blocks.</p>
+<p><strong>Nodes</strong>: A node is an independent participant (a computer or a device) that maintains a copy of the ledger, propagates and validates the transactions.</p>
+<p><strong>Distributed Ledger</strong>: I&#39;ve been using the term blockchain to describe the platform as a whole. However, the distributed ledger that stores the transactions which is basically blocks of data chained together is also called blockchain. Apologies from my end if this has caused or may cause some confusions.</p>
+<p><strong>Consensus Mechanism</strong>: In a centralised system, a server is the authoritative figure. It doesn&#39;t need to worry about making the nodes agree with the server on it&#39;s computational results. Whatever the server decides, others must follow. Some challenges arise if we were to remove the central body from the equation. How do we make a bunch of independent nodes agree on which transactions are valid and which transactions need to be added in the blockchain? And importantly, who adds these transactions in the blockchain if there is no central body to govern this process. That is where consensus mechanisms come into play. It is a set of rules that the nodes follow to reach agreement. We&#39;ll see the working of Bitcoin&#39;s consensus mechanism in the Bitcoin section.</p>
+<h2>A brief history of blockchains</h2>
+<p>Let&#39;s briefly go through how blockchains came into existence. Blockchains like I said previously combine multiple disciplines of computer science, mathematics and economics into a single domain. So, no single person is entirely responsible for the advancements of blockchain. It builds majorly upon decades of research in cryptography and distributed systems done by individuals working independently from each other.</p>
+<h3>The actual origin</h3>
+<p>We could confidently say that blockchains became a hot topic of discussion with the release of Bitcoin in 2009. So, there a common misconception that bitcoin is the first or the longest running blockchain. However, the origins of blockchain could be traced back earlier to 1991 when Stuart Haber and W. Scott published a paper titled &quot;How to Time-Stamp a Digital Document&quot;. Their major innovation was to create tamper-proof documents chained together using cryptographical hash functions (a function that is used to create digital fingerprint of data).This paper laid the foundation for blockchains. It is also cited directly in the Bitcoin whitepaper.</p>
+<h2>Bitcoin</h2>
+<p>Bitcoin is a electronic payment system anyone to join the network and easily send and receive any amount of money to anyone in the world. Bitcoin is decentralised meaning the transactions are carried out directly among the participants without a trusted third party like a bank. It is also an open source project which means that anyone can run the code and even contribute to the codebase.</p>
+<p>In this section, we&#39;ll take a look at the most popular and successful blockchain: Bitcoin. Learning about bitcoin is a very good starting point to learn about how blockchains. We&#39;ll first be going through how bitcoin was developed, how it works and it&#39;s limitations which led to the development of blockchain innovations like Ethereum.</p>
+<h3>Pre-bitcoin Digital Moneys</h3>
+<p>With cryptography (science of secure communication and computation) becoming mainstream technology in the late 1970s and 1980s, cryptographers started working on a great challenge: the use of cryptography for the development of a digital money system. Now, why was this a great challenge? Because, of something called &#39;The Double Spend Problem&#39;. Unlike physical cash, a digital money, at the end of the day, would be a bunch of 0s and 1s, which can be easily copied and spent multiple times. What this simply means is that someone can make a copy of the money he owns and spend the same money multiple times (double spending). Some notable pre-bitcoin digital money systems were DigiCash, B-Money and Bit Gold. However, they all eventually failed due to the reliance on some kind of central body for moderating the transactions: a single point of failure.</p>
+<h3>How did Bitcoin solve this problem?</h3>
+<h3>Who founded bitcoin?</h3>
+<p>On Halloween, 2008, a whitepaper (a research based report that explains a complex problem and argues for a particular solution to that problem) titled &quot;Bitcoin: A Peer-to-Peer Electronic Cash System&quot; is published under the pseudonym <strong>Satoshi Nakamoto</strong>. The identity of the person or entity behind this pseudonym has been a matter of constant speculation since the release of Bitcoin. This could be a separate topic on it&#39;s own which I might write about in future blogs.</p>
+<h3>What was in the paper?</h3>
+<p>Satoshi Nakamoto outlined the idea for a peer-to-peer digital money that operated without a trusted third party such as banks or governments. The paper proposed storing the transactions on a ledger (the blockchain), where each block a list of transactions and the cryptographic hash (a large number that acts as the fingerprint of each block). This would chain the blocks together create an immutable and secure records.</p>
+<h3>The genesis block</h3>
+<p>By January 3, 2009, Nakamoto and the group of developers he attracted through the whitepaper were able to mine the first Bitcoin block, known as the Genesis Block. Satoshi was actively involved in the development of Bitcoin until late December in 2010 because he completely vanished after handing over the responsibility of further developments to the most active contributors of the open source Bitcoin project.</p>
+<p>We&#39;ve covered the origins of bitcoin in brief. With that out of the way, next we&#39;ll look at how Bitcoin works.</p>
+<h3>How Bitcoin works?</h3>
+<p>Anyone can download and run the bitcoin software on their computers. When you run the program for the first time, it will connect to other computers running the same program, and they will start sharing a file with you. This file is called the blockchain, which is a big list of transactions.</p>
+<p>When you want to send bitcoin to someone, you create a transaction and announce it to the network. The nodes then collect these new transactions and bundle them into a new &quot;block.&quot;</p>
+<p>But who gets to add this new block to the chain? This is where &quot;mining&quot; comes in. Mining is like a mathematical race. All the nodes (miners) compete to solve a very difficult math puzzle. The first one to solve it gets to add the new block of transactions to the blockchain and is rewarded with some new bitcoin. This process is called Proof-of-Work.</p>
+<p>This system makes it incredibly hard to change old transactions. If you wanted to change a transaction from a few blocks back, you would have to re-do the Proof-of-Work for that block and every block that came after it, which would require more computer power than the rest of the network combined. This is practically impossible, making the blockchain secure.</p>
+<h3>Limitations of Bitcoin</h3>
+<p>Bitcoin in itself was a revolutionary idea. It provided a platform where people could directly send money to anyone without a trusted third party in a secure and tamper resistant way. People soon started imagining the vast potential of the blockchains beyond using it just for digital currency. The key idea was that of smart contracts. Smart contracts are programs of arbitrary complexity that run on blockchains. This means you could run almost any program in the blockchain. However, it was not possible with Bitcoin due to it&#39;s limited scripting language.</p>
+<h2>Ethereum</h2>
+<p>This limitation of Bitcoin was solved with the development of Ethereum. An early Bitcoin enthusiast named Vitalik Buterin cam up with the idea of building a new kind of blockchain. His vision was: a &quot;world computer&quot;. A single, decentralized computation platform that anyone in the world could use but no single person controls. This project became Ethereum. Ethereum supported the idea of smart contracts.</p>
+<p>This ability to run code opened up a whole new world of possibilities. It led to the rise of <strong>Decentralized Applications</strong>, or <strong>dApps</strong>. These are apps like social media platforms, games, and financial services that run on the blockchain instead of on a company&#39;s central server.</p>
+
+                </div>
+
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <span class="tag">bitcoin</span><span class="tag">blockchain</span><span class="tag">ethereum</span>
+                    </div>
+                    <div class="post-navigation">
+                        <a href="../index.html" class="nav-link">← Back to Posts</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Prashish</p>
+        </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>

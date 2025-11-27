@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Prashish</title>
+    <meta name="description" content="Personal blog covering blockchain, cryptography, and technology insights">
+    <meta name="author" content="Prashish">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blog.prashish.tech/">
+    <meta property="og:title" content="Blog | Prashish">
+    <meta property="og:description" content="Personal blog covering blockchain, cryptography, and technology insights">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blog | Prashish">
+    <meta name="twitter:description" content="Personal blog covering blockchain, cryptography, and technology insights">
+    <meta name="twitter:image" content="https://blog.prashish.tech/images/twitter-preview-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./src/assets/prashish.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Theme Script (prevent FOUC) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/" class="site-title-link">Prashish</a>
+                </h1>
+                <nav class="social-nav">
+                    <a href="https://bsky.app/profile/prashish.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">Bluesky</span>
+                        Bluesky
+                    </a>
+                    <a href="https://github.com/pphunyal" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">GitHub</span>
+                        GitHub
+                    </a>
+                    <a href="https://instagram.com/quantumbrokemyrsa" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <span class="sr-only">Instagram</span>
+                        Instagram
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="search" id="search-input" class="search-input" placeholder="Search posts..." aria-label="Search posts">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+
+            <!-- Categories -->
+            <section class="categories-section">
+                <h2 class="section-title">Categories</h2>
+                <nav class="categories-nav">
+                    <a href="#category/blockchain" class="category-link" data-category="blockchain">
+                        Blockchain
+                    </a>
+                    <a href="#category/cryptography" class="category-link" data-category="cryptography">
+                        Cryptography
+                    </a>
+                    <a href="#category/fragments" class="category-link" data-category="fragments">
+                        Fragments
+                    </a>
+                    <a href="#category/mathematics" class="category-link" data-category="mathematics">
+                        Mathematics
+                    </a>
+                </nav>
+            </section>
+
+            <!-- Recent Posts -->
+            <section class="posts-section">
+                <h2 class="section-title">Recent Posts</h2>
+                <div class="posts-container">
+                    <ul class="post-list" id="recent-posts">
+                        <li class="loading-item">
+                            <div class="loading-spinner"></div>
+                            <span>Loading posts...</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Prashish.</p>
+        </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="./src/blog.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="./src/search.js"></script>
+    <script src="./src/router.js"></script>
+    
+    <!-- Main App Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize router for dynamic category pages
+            const router = new CategoryRouter();
+            
+            // Only run home page logic if we're on the home route
+            if (!window.location.hash || window.location.hash === '#') {
+                // Initialize blog system for home page
+                const blogSystem = new BlogSystem();
+                const searchSystem = new SearchSystem();
+                
+                try {
+                    // Load posts
+                    const posts = await blogSystem.loadPosts();
+                    
+                    // Initialize search
+                    searchSystem.init(posts, blogSystem);
+                    
+                    // Initialize search from URL if present
+                    searchSystem.initializeFromURL();
+                    
+                    // Display recent posts
+                    const recentPostsList = document.getElementById('recent-posts');
+                    const recentPosts = posts
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .slice(0, 10);
+                    
+                    if (recentPosts.length > 0) {
+                        recentPostsList.innerHTML = recentPosts.map(post => `
+                            <li class="post-item">
+                                <article class="post-card">
+                                    <div class="post-meta">
+                                        <time class="post-date" datetime="${post.date}">${utils.formatDate(post.date)}</time>
+                                        <span class="post-category-tag" data-category="${post.category}">
+                                            ${blogSystem.getCategoryName(post.category)}
+                                        </span>
+                                    </div>
+                                    <h3 class="post-title">
+                                        <a href="${post.url}" class="post-link">${post.title}</a>
+                                    </h3>
+                                    <div class="post-excerpt">
+                                        ${post.excerpt || 'Click to read more...'}
+                                    </div>
+                                </article>
+                            </li>
+                        `).join('');
+                    } else {
+                        recentPostsList.innerHTML = '<li class="no-posts"><p>No posts found.</p></li>';
+                    }
+                } catch (error) {
+                    console.error('Failed to load posts:', error);
+                    document.getElementById('recent-posts').innerHTML = 
+                        '<li class="error-state"><p>Failed to load posts. Please try again later.</p></li>';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
